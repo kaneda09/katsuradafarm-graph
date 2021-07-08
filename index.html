@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+  <title>桂田農園 水耕栽培データ閲覧システム</title>
+  <link rel="stylesheet" href="stylesheet.css"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="text/javascript" href="text.js"></script>
+  <script type="text/javascript">
+    function hyouji()
+    {
+      //テキストボックスの数値を変数に格納する
+      var num1=document.form1.yearv.options[document.form1.yearv.selectedIndex].value;
+      var num2=document.form1.monthv.options[document.form1.monthv.selectedIndex].value;
+      var fnm1="monthfig/ntfig"+num1+num2+".png";
+      document.aa01.src=fnm1;
+    }
+  </script>
+  </head>
+  <body  onload="hyouji();">
+<noscript>
+  <p>Java Scriptを有効にしてください。</p>
+  </noscript>
+<h1>桂田農園 水耕栽培データ閲覧システム</h1>
+<h2 class="nyu">豆苗の室温・輪郭面積</h2>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td><form name="form1">
+        <select name="yearv">
+          <option selected value="2020">2021</option>
+        </select>
+        年
+        <select name="monthv">
+          <option selected  value="07">7</option>
+        </select>
+        月
+        <select name="weekv">
+          <option selected  value="01">1(テスト)</option>
+        </select>
+        週
+        <button type="button" onClick="hyouji();">表示 </button>
+      </form></td>
+  </tr>
+    <tr>
+    <td><p>温度計と定点カメラで豆苗の様子を週ごとに観察しています。</p>
+      <p>グラフは時系列にプロットしており、青線が温度です。</p></td>
+  </tr>
+    <tr>
+    <td><img name="bokeh_plot" src="bokeh_plot.png"></td>
+  </tr>
+  </table>
+<hr>
+<a href="https://katsurada-farm.amebaownd.com/">桂田農園トップページ</a>
+</body>
+</html>
