@@ -1,122 +1,62 @@
-@charset "utf-8";
-/* CSS Document */
-body {
-	text-align: center;
-	margin: 15px 0;
-}
-.clearfix::after {
- content: "";
- display: block;
- clear: both;
-}
-img {
-	width: 100%;
-}
-p {
-	margin: 0;
-	padding: 0 1em;
-}
-h1 {
-	font-size: 32px;
-}
-h2 {
-	font-size: 24px;
-	font-weight: bold;
-	line-height: 2;
-}
-h3 {
-	font-size: 20px;
-}
-h3 {
-	font-size: 18px;
-}
-p {
-	text-align: left;
-	line-height: 1.8;
-}
-a {
-	display: inline-block;
-	padding: 0.3em 1em;
-	text-decoration: none;
-	color: #696969;
-	border: solid 3px #696969;
-	font-weight: bold;
-	transition: .4s;
-}
-a:hover {
-	background: #696969;
-	color: #fff;
-}
-hr {
-	border-top: 1px solid #bbb;
-	border-bottom: 1px solid #fff;
-	margin: 15px;
-}
-table {
-	margin: 0 auto;
-	border-collapse:  collapse;
-	max-width: 70%;
-}
-th, td {
-	padding: 7px;
-	border: 1px solid #555;
-}
-select, button {
-	padding: 10px;
-}
-ul, li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-li {
-	line-height: 2;
-	display: inline-block;
-	margin: 0 5px;
-}
-.pager span {
-	margin: 0 10px 5px 10px;
-	display: inline-block;
-	padding: 0.3em 1em;
-}
-.pager a {
-	text-decoration: none;
-	color: #000;
-	border: none;
-	font-weight: bold;
-	transition: .4s;
-	padding: 0;
-}
-.pager a:hover {
-	background: none;
-}
-
-.pager a:hover span {
-	background: #ccc;
-}
-
-/* 各地点ラベル設定 */
-h2.takahama {
-	background: #182c4b;
-	color: #fff;
-}
-h2.nyu {
-	background: #ffa500;
-	color: #fff;
-}
-h2.ooshima {
-	background: #0668bc;
-	color: #fff;
-}
-h2.ugu {
-	background: #00a4d5;
-	color: #fff;
-}
-h2.takasu {
-	background: #6ac82d;
-	color: #fff;
-}
-h2.echizen {
-	background: #303;
-	color: #fff;
-}
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+  <title>桂田農園 水耕栽培データ閲覧システム</title>
+  <link rel="stylesheet" href="stylesheet.css"/>
+  <script type="text/javascript">
+   function hyouji()
+  {
+    //テキストボックスの数値を変数に格納する
+    var num1=document.form1.yearv.options[document.form1.yearv.selectedIndex].value;
+    var num2=document.form1.monthv.options[document.form1.monthv.selectedIndex].value;
+    var num3=document.form1.weekv.options[document.form1.weekv.selectedIndex].value;
+    var fnm1="image/ttfig"+num1+num2+num3+".png";
+    document.ttfig20210701.src=fnm1;
+  }
+  </script>
+  </head>
+  <body  onload="hyouji();">
+    <noscript>
+      <p>Java Scriptを有効にしてください。</p>
+    </noscript>
+<h1>桂田農園 水耕栽培データ閲覧システム</h1>
+<h2 class="toumyou">豆苗の室温・輪郭面積</h2>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td><form name="form1">
+        <select name="yearv">
+          <option selected value="2021">2021</option>
+          <option   value="2050">2050</option>
+          <option   value="2051">2051</option>
+        </select>
+        年
+        <select name="monthv">
+          <option selected  value="07">07</option>
+          <option   value="01">01</option>
+        </select>
+        月
+        <select name="weekv">
+          <option selected  value="01">01</option>
+          <option value="02">02</option>
+          <option   value="03">03</option>
+          <option   value="04">04</option>
+          <option   value="05">05</option>
+          <option   value="06">06</option>
+        </select>
+        週
+        <button type="button" onClick="hyouji();">表示 </button>
+      </form></td>
+  </tr>
+    <tr>
+    <td><p>温度計と定点カメラで豆苗の様子を週ごとに観察しています。</p>
+      <p>グラフは時系列にプロットしており、青線が温度です。後日、豆苗の輪郭面積も追加します。</p>
+      <p>データが足りないときはフリー画像か動物を表示します。</p></td>
+  </tr>
+  <tr>
+    <td><img name="ttfig20210701" src="image/ttfig20210701.png"></td>
+  </tr>
+  </table>
+<hr>
+<a href="https://katsurada-farm.amebaownd.com/">桂田農園トップページ</a>
+</body>
+</html>
